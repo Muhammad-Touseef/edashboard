@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Engro Dashboard</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+  <!-- Boxicons CDN Link -->
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <img src="img/logo.png" alt="Engro">
+      <span class="logo_name"
+            style="padding: 10px;">Engro Dashboard</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#" class="active">
+          <i class='bx bx-grid-alt'></i>
+          <span class="links_name">Log book</span>
+        </a>
+      </li>
+      <li>
+        <a href="permit.html" target="permit">
+          <i class='bx bx-box'></i>
+          <span class="links_name">Permit Board</span>
+        </a>
+      </li>
+      <li>
+        <a href="pid.html" target="pid">
+          <i class='bx bx-pie-chart-alt-2'></i>
+          <span class="links_name">P&ID Board</span>
+        </a>
+      </li>
+      <li>
+        <a href="ops.html" target="ops">
+          <i class='bx bx-coin-stack'></i>
+          <span class="links_name">OPS Board</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="logBook">Log Book</span>
+      </div>
+      <div class="search-box">
+        <input type="file">
+      </div>
+
+    </nav>
+
+    <!-- Page Starts Here -->
+
+    <div class="home-content" style="display: flex;flex-direction: column;
+    width: 100%;">
+
+      <div class="section-boxes" id="logbook">
+        <div class="recent-section box">
+          <div class="title">Log Book</div>
+          <div class="section-details">
+            <ul class="details">
+              <li class="topic">Excel Sheet Display</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function () {
+      sidebar.classList.toggle("active");
+      if (sidebar.classList.contains("active")) {
+        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+      } else
+        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+  </script>
+
+</body>
+
+</html>

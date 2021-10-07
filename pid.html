@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P & ID Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <a href="index.html" target="index">
+                <li>Main Dashboard</li>
+            </a>
+            <a href="permit.html" target="permit">
+                <li>Permit Board</li>
+            </a>
+            <a href="ops.html" target="ops">
+                <li>OPS Board</li>
+            </a>
+        </ul>
+    </nav>
+    <div class="home-content" style="display: flex;flex-direction: column;width: 100%;">
+
+        <div class="section-boxes" id="p&id">
+            <div class="recent-section box">
+                <div class="title">P&ID Board</div>
+                <div class="section-details">
+
+                    <iframe src=".pdf" id="pdf1">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="side-details">
+                <div class="title">Master P&IDs</div>
+                <ul class="top-section-details">
+
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/pids/201-03 PX TANK T-1103.pdf'">201-03 PX
+                            TANK T-1103</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/pids/201-04 PX SHIP UNLOADING.pdf'"">201-04 PX SHIP UNLOADING</a>
+                    </li>
+                    <li>
+                        <a onclick=" document.getElementById('pdf1').src='pdfs/pids/201-05 PX TRUCK LOADING.pdf'"">201-05
+                            PX TRUCK LOADING</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/pids/201-06 PX SLOP TANK T-3101.pdf'"">201-06 PX SLOP TANK T-3101</a>
+                    </li>
+                    <li>
+                        <a onclick=" document.getElementById('pdf1').src='pdfs/pids/201-07 PX SLOP TRUCK LOADING.pdf'"">201-07
+                            PX SLOP TRUCK LOADING</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/pids/202-01 ACETIC ACID TRUCK LOADING.pdf'"">
+                            202-01 ACETIC ACID TRUCK LOADING</a>
+                    </li>
+                    <li>
+                        <a onclick=" document.getElementById('pdf1').src='pdfs/pids/202-02 ACETIC ACID TANK T-1202.pdf'"">
+                            202-02 ACETIC ACID TANK T-1202</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/pids/202-03 ACETIC ACID TANK T-1201.pdf'"">
+                            202-03 ACETIC ACID TANK T-1201</a>
+                    </li>
+                    <li>
+                        <a onclick=" document.getElementById('pdf1').src='pdfs/pids/202-04 ACETIC ACID SHIP UNLOADING.pdf'"">202-04
+                            ACETIC ACID SHIP UNLOADING</a>
+                    </li>
+
+                </ul>
+            </div>
+
+
+        </div>
+</body>
+
+</html>

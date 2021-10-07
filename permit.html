@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permit Board</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- tags for drag & drop function start point-->
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="en">
+    <link rel="stylesheet" href="js/bootstrap.min.css">
+    <link rel="stylesheet" href="js/jquery-ui.css">
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="fabric.js"></script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script src="js/drag_drop.js"></script>
+    <!-- tags for drag & drop function end -->
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <a href="index.html" target="index">
+                <li>Main Dashboard</li>
+            </a>
+            <a href="ops.html" target="ops">
+                <li>OPS Board</li>
+            </a>
+            <a href="pid.html" target="pid">
+                <li>P & ID Board</li>
+            </a>
+        </ul>
+    </nav>
+    <div class="home-content" style="display: flex;flex-direction: column;
+    width: 100%;">
+
+        <div class="section-boxes" id="permit">
+            <div class="recent-section box">
+                <div class="title">Permit Board</div>
+                <div class="section-details">
+                    <!-- ul class="details">
+                        <li class="topic">MoC CCR Smart Board</li>
+                        <li><img src="img/permit.png" alt="Permit board overview" class="permitimg"></li>
+                    </ul> -->
+
+                    <div class="col container2" id="dndBoard">
+                        <div id="ch_dndBoard1" class="bal-oszlop tapad bal"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="side-details color-box cloneBoard">
+                <div class="title">Permit Nature</div>
+                <ul class="top-section-details">
+                    <!-- <li>
+                        <span class="product">Cold Work Permit</span>
+                        <span class="color" style="background-color: green;">Green</span>
+                    </li>
+                    <li>
+                        <span class="product">Hot Work Permit</span>
+                        <span class="color" style="background-color: red;">Red</span>
+                    </li>
+                    <li>
+                        <span class="product">Electrical Work Permit</span>
+                        <span class="color" style="background-color: pink;">Pink</span>
+                    </li>
+                    <li>
+                        <span class="product">Excavation & Civil Work Permits</span>
+                        <span class="color" style="background-color: white;">White</span>
+                    </li>
+                    <li>
+                        <span class="product">Confined Space Entry Permit</span>
+                        <span class="color" style="background-color: blue;">Blue</span>
+                    <li>
+                        <span class="product">Vehicle Entry Permit</span>
+                        <span class="color" style="background-color: orange;">Orange</span>
+                    </li>
+                    <li>
+                        <span class="product">Radiography Work Permit</span>
+                        <span class="color" style="background-color: yellow;">Yellow</span>
+                    </li> -->
+
+                    <li>                                    
+                          <span class="mozgat f75x30" style="background-color: white !important;">
+                            <p>Excavation & Civil WP</p>
+                          </span>
+                        </li>
+                        <li>                                    
+                            <span class="mozgat  f75x30" style="background-color: yellow !important;">
+                              <p>Radiography WP</p>
+                            </span>
+                        </li>
+                        <li>                                    
+                            <span class="mozgat f75x30" style="background-color: green !important;">
+                              <p>Cold WP</p>
+                            </span>
+                        </li>
+                        <li>                                    
+                            <span class="mozgat f75x30" style="background-color: red !important;">
+                              <p>Hot WP</p>
+                            </span>
+                        </li>
+                        <li>                                    
+                            <span class="mozgat f75x30" style="background-color: pink !important;">
+                              <p>Electrical WP</p>
+                            </span>
+                        </li>
+                        <li>                                    
+                            <span class="mozgat f75x30" style="background-color: dodgerblue !important;">
+                              <p>Confined Space EP</p>
+                            </span>
+                        </li>
+                        <li>
+                          <span class="mozgat f75x30" style="background-color: orange !important;">
+                            <p>Vehicle EP</p>
+                          </span>             
+                        </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="section-boxes">
+            <div class="recent-section box">
+                <h3 style="padding: 25px;">
+                    Excel Sheet Data here
+                </h3>
+                <div class="search-box">
+                    <input type="file">
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>
