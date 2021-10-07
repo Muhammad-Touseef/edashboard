@@ -1,4 +1,4 @@
 # dashboard
 Internship project - Temporary repo - WIP
 
-published at https://somia-ansari.github.io/dashboard/
+published at https://muhammad-touseef.github.io/edashboard/
