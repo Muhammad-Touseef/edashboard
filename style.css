@@ -542,7 +542,7 @@ nav .profile-details i {
     font-size: 20px;
   }
   nav ul a {
-    font-size: 1.8em;
+    font-size: 1.8em !important;
   }
 }
 
@@ -551,7 +551,7 @@ nav .profile-details i {
     font-size: 26px;
   }
   nav ul a {
-    font-size: 2.5em;
+    font-size: 2.5em !important;
   }
 }
   
@@ -560,7 +560,7 @@ nav .profile-details i {
     font-size: 36px;
   }
   nav ul a {
-    font-size: 3.3em;
+    font-size: 3.3em !important;
   }
 }
   
@@ -569,7 +569,7 @@ nav .profile-details i {
     font-size: 50px;
   }
   nav ul a {
-    font-size: 4.5em;
+    font-size: 4.5em !important;
   }
 }
 /* Nav bar */
