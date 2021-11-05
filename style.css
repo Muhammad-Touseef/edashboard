@@ -532,9 +532,12 @@ nav .profile-details i {
     width: 100%;
     height: auto;
   }
+  .section-boxes .side-details li a {
+    font-size: 16px;
+  }
 }
   
-@media only screen and (min-width: 1920px) {
+@media only screen and (min-width: 2500px) {
   .section-boxes .side-details li a {
     font-size: 27px;
   }
