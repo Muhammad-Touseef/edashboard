@@ -537,18 +537,20 @@ nav .profile-details i {
 @media only screen and (min-width: 1920px) {
   .section-boxes .side-details li a {
     font-size: 27px;
+  }
 }
   
 @media only screen and (min-width: 5000px) {
   .section-boxes .side-details li a {
     font-size: 36px;
+  }
 }
   
 @media only screen and (min-width: 7500px) {
   .section-boxes .side-details li a {
     font-size: 50px;
+  }
 }
-
 /* Nav bar */
 
 nav {
