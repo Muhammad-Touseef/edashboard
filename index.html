@@ -15,10 +15,10 @@
   <script type="text/javascript" src="js/xlsx.full.min.js"></script>
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   
-  <script type="text/javascript" src="login.js">
-    window.onload = function() 
+  <script type="text/javascript">
+    if(localStorage.getItem("Admin") == null) 
     {
-  logincheck();
+     window.location.replace("login.html");
     }
   </script>
   
