@@ -7,8 +7,8 @@ loginButton.addEventListener("click", (e) => {
     const username = loginForm.username.value;
     const password = loginForm.password.value;
 
-    if (username === "user" && password === "admin") {
-    	localStorage.setItem("user", "admin");
+    if (username === "Admin" && password === "Evtl123") {
+    	localStorage.setItem("Admin", "Evtl123");
         alert("You have successfully logged in.");
         location.assign("index.html");
         // location.reload();
