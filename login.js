@@ -3,10 +3,11 @@ const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
 
 function logincheck(){
-    if(localStorage.getItem("user") == null) {
+    if(localStorage.getItem("user") == null) 
+    {
      window.location.replace("login.html");
+    }
 }
-
 loginButton.addEventListener("click", (e) => {
     e.preventDefault();
     const username = loginForm.username.value;
