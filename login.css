@@ -61,11 +61,12 @@ body {
 
 .login-form-field {
   border: none;
+  font-size:20px;
   border-bottom: 1px solid #3a3a3a;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-radius: 3px;
   outline: none;
-  padding: 0px 0px 5px 5px;
+  padding: 0px 0px 5px 80px;
 }
 
 #login-form-submit {
