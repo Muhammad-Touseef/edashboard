@@ -16,10 +16,3 @@ loginButton.addEventListener("click", (e) => {
         loginErrorMsg.style.opacity = 1;
     }
 })
-
-function logincheck(){
-    if(localStorage.getItem("Admin") == null) 
-    {
-     window.location.replace("login.html");
-    }
-}
