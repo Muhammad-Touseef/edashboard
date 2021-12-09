@@ -2,249 +2,201 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Permit Board</title>
-    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Permit Board</title>
+<link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
 
-    <!-- tags for drag & drop function start point-->
-    <meta name="google" content="notranslate">
-    <meta http-equiv="Content-Language" content="en">
-    <link rel="stylesheet" href="js/bootstrap.min.css">
-    <link rel="stylesheet" href="js/jquery-ui.css">
-    <link rel="stylesheet" href="main.css">
-    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
-    <script type="text/javascript" src="fabric.js"></script>
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script> -->
-    <script type="text/javascript" src="js/jquery-ui.js"></script>
-    <script type="text/javascript" src="js/xlsx.full.min.js"></script>
-    <script src="js/drag_drop.js"></script>
-    <!-- tags for drag & drop function end -->
-    
-    <script type="text/javascript">
+<!-- tags for drag & drop function start point-->
+<meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+<link rel="stylesheet" href="js/bootstrap.min.css">
+<link rel="stylesheet" href="js/jquery-ui.css">
+<link rel="stylesheet" href="main.css">
+<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="fabric.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/xlsx.full.min.js"></script>
+<script src="js/drag_drop.js"></script>
+<!-- tags for drag & drop function end -->
 
-    if(localStorage.getItem("Admin") == null) {
-     window.location.replace("login.html");
-    }
-    else{
-  var hours = 1; // to clear the localStorage after 1 hour(if someone want to clear after 8hrs simply change hours=8)
-  var now = new Date().getTime();
-  var setupTime = localStorage.getItem('setupTime');
+<script type="text/javascript">
 
-  if (setupTime == null) {
-    localStorage.setItem('setupTime', now)
+if(localStorage.getItem("Admin") == null) {
+    window.location.replace("login.html");
+}
+else{
+var hours = 1;
+// to clear the localStorage after 1 hour(if someone want to clear after 8hrs simply change hours=8)
+var now = new Date().getTime();
+var setupTime = localStorage.getItem('setupTime');
+
+if (setupTime == null) {
+localStorage.setItem('setupTime', now)
 } else {
-    if(now-setupTime > hours*60*60*1000) {
-        localStorage.clear()
-        localStorage.setItem('setupTime', now);
-      }
+if(now-setupTime > hours*60*60*1000) {
+    localStorage.clear()
+    localStorage.setItem('setupTime', now);
     }
-  }
-  </script>
-    
+}
+}
+</script>
+
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <a href="index.html" target="index">
-                <li>Main Dashboard</li>
-            </a>
-            <a href="ops.html" target="ops">
-                <li>OPS Board</li>
-            </a>
-            <a href="pid.html" target="pid">
-                <li>P & ID Board</li>
-            </a>
-        </ul>
-    </nav>
-    <div class="home-content" style="display: flex;flex-direction: column;
-    width: 100%;">
+<nav>
+    <ul>
+        <a href="index.html" target="index">
+            <li>Main Dashboard</li>
+        </a>
+        <a href="ops.html" target="ops">
+            <li>OPS Board</li>
+        </a>
+        <a href="pid.html" target="pid">
+            <li>P & ID Board</li>
+        </a>
+        <a href="toxic.html" target="pid">
+            <li style="font-size:17px;">Toxic and Radiation Contours</li>
+        </a>
+    </ul>
+</nav>
+<div class="home-content" style="display: flex;flex-direction: column;
+width: 100%;">
 
-        <div class="section-boxes" id="permit">
-            <div class="recent-section box">
-                <div class="title">Permit Board</div>
-                <div class="section-details">
-                    <!-- ul class="details">
-                        <li class="topic">MoC CCR Smart Board</li>
-                        <li><img src="img/permit.png" alt="Permit board overview" class="permitimg"></li>
-                    </ul> -->
-
-                    <div class="col container2" id="dndBoard">
-                        <div id="ch_dndBoard1" class="bal-oszlop tapad bal"></div>
-                    </div>
-
+    <div class="section-boxes" id="permit">
+        <div class="recent-section box">
+            <div class="title">Permit Board</div>
+            <div class="section-details">
+                <div class="col container2" id="dndBoard">
+                    <div id="ch_dndBoard1" class="bal-oszlop tapad bal"></div>
                 </div>
+
             </div>
-            <div class="side-details color-box cloneBoard">
-                <div class="title">Permit Nature</div>
-                <ul class="top-section-details">
-                    <!-- <li>
-                        <span class="product">Cold Work Permit</span>
-                        <span class="color" style="background-color: green;">Green</span>
-                    </li>
-                    <li>
-                        <span class="product">Hot Work Permit</span>
-                        <span class="color" style="background-color: red;">Red</span>
-                    </li>
-                    <li>
-                        <span class="product">Electrical Work Permit</span>
-                        <span class="color" style="background-color: pink;">Pink</span>
-                    </li>
-                    <li>
-                        <span class="product">Excavation & Civil Work Permits</span>
-                        <span class="color" style="background-color: white;">White</span>
-                    </li>
-                    <li>
-                        <span class="product">Confined Space Entry Permit</span>
-                        <span class="color" style="background-color: blue;">Blue</span>
-                    <li>
-                        <span class="product">Vehicle Entry Permit</span>
-                        <span class="color" style="background-color: orange;">Orange</span>
-                    </li>
-                    <li>
-                        <span class="product">Radiography Work Permit</span>
-                        <span class="color" style="background-color: yellow;">Yellow</span>
-                    </li> -->
+        </div>
+        <div class="side-details color-box cloneBoard">
+            <div class="title">Permit Nature</div>
+            <ul class="top-section-details">
 
-                    <p style="margin-bottom: -8px; margin-top: 10px;">Excavation & Civil WP</p>
+                <p style="margin-bottom: -8px; margin-top: 10px;">Excavation & Civil WP</p>
 
+                <li>                                    
+                        <span class="mozgat f75x30" style="background-color: white !important;">
+                        <p></p>
+                        </span>
+                    </li>
+                    <p style="margin-bottom: -8px;margin-top: 10px;">Radiography WP</p>
                     <li>                                    
-                          <span class="mozgat f75x30" style="background-color: white !important;">
+                        <span class="mozgat  f75x30" style="background-color: yellow !important;">
                             <p></p>
-                          </span>
-                        </li>
-                        <p style="margin-bottom: -8px;margin-top: 10px;">Radiography WP</p>
-                        <li>                                    
-                            <span class="mozgat  f75x30" style="background-color: yellow !important;">
-                              <p></p>
-                            </span>
-                        </li>
-                        <p style="margin-bottom: -8px;margin-top: 10px;">Cold WP</p>
-                        <li>                                    
-                            <span class="mozgat f75x30" style="background-color: green !important;">
-                              <p></p>
-                            </span>
-                        </li>
-                        <p style="margin-bottom: -8px;margin-top: 10px;">Hot WP</p>
-                        <li>                                    
-                            <span class="mozgat f75x30" style="background-color: red !important;">
-                              <p></p>
-                            </span>
-                        </li>
-                        <p style="margin-bottom: -8px;margin-top: 10px;">Electrical WP</p>
-                        <li>                                    
-                            <span class="mozgat f75x30" style="background-color: pink !important;">
-                              <p></p>
-                            </span>
-                        </li>
-                        <p style="margin-bottom: -8px;margin-top: 10px;">Confined Space WP</p>
-                        <li>                                    
-                            <span class="mozgat f75x30" style="background-color: dodgerblue !important;">
-                              <p></p>
-                            </span>
-                        </li>
-                         <p style="margin-bottom: -8px;margin-top: 10px;">Vehicle WP</p>
-                        <li>                       
-                          <span class="mozgat f75x30" style="background-color: orange !important;">
+                        </span>
+                    </li>
+                    <p style="margin-bottom: -8px;margin-top: 10px;">Cold WP</p>
+                    <li>                                    
+                        <span class="mozgat f75x30" style="background-color: green !important;">
                             <p></p>
-                          </span>             
-                        </li>
+                        </span>
+                    </li>
+                    <p style="margin-bottom: -8px;margin-top: 10px;">Hot WP</p>
+                    <li>                                    
+                        <span class="mozgat f75x30" style="background-color: red !important;">
+                            <p></p>
+                        </span>
+                    </li>
+                    <p style="margin-bottom: -8px;margin-top: 10px;">Electrical WP</p>
+                    <li>                                    
+                        <span class="mozgat f75x30" style="background-color: pink !important;">
+                            <p></p>
+                        </span>
+                    </li>
+                    <p style="margin-bottom: -8px;margin-top: 10px;">Confined Space WP</p>
+                    <li>                                    
+                        <span class="mozgat f75x30" style="background-color: dodgerblue !important;">
+                            <p></p>
+                        </span>
+                    </li>
+                        <p style="margin-bottom: -8px;margin-top: 10px;">Vehicle WP</p>
+                    <li>                       
+                        <span class="mozgat f75x30" style="background-color: orange !important;">
+                        <p></p>
+                        </span>             
+                    </li>
 
-                </ul>
-            </div>
+            </ul>
         </div>
-        <div class="section-boxes">
-            <div class="recent-section box">
-                <h3 style="padding: 25px;">
-                    Upload Daily Job Schedule Excel file.
-                </h3>
-                <p>Make sure that excel file extension ends with .xlsx. </p>
-                <div class="search-box">
-                    <input type="file" id="excel_file">
-                </div>
-                <div id="excel_data" class="mt-5"></div>
-            </div>
-
-            
-        </div>
-
-
-
     </div>
+    <div class="section-boxes">
+        <div class="recent-section box">
+            <h3 style="padding: 25px;">
+                Upload Daily Job Schedule Excel file.
+            </h3>
+            <p>Make sure that excel file extension ends with .xlsx. </p>
+            <div class="search-box">
+                <input type="file" id="excel_file">
+            </div>
+            <div id="excel_data" class="mt-5"></div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript">
 
-    const excel_file = document.getElementById('excel_file');
+const excel_file = document.getElementById('excel_file');
 
 excel_file.addEventListener('change', (event) => {
 
-    if(!['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'].includes(event.target.files[0].type))
+if(!['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'].includes(event.target.files[0].type))
+{
+    document.getElementById('excel_data').innerHTML = '<div class="alert alert-danger">Only .xlsx or .xls file format are allowed</div>';
+
+    excel_file.value = '';
+
+    return false;
+}
+
+var reader = new FileReader();
+
+reader.readAsArrayBuffer(event.target.files[0]);
+
+reader.onload = function(event){
+
+    var data = new Uint8Array(reader.result);
+
+    var work_book = XLSX.read(data, {type:'array'});
+
+    var sheet_name = work_book.SheetNames;
+
+    var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {header:1});
+
+    if(sheet_data.length > 0)
     {
-        document.getElementById('excel_data').innerHTML = '<div class="alert alert-danger">Only .xlsx or .xls file format are allowed</div>';
+        var table_output = '<table class="table table-striped table-bordered">';
 
-        excel_file.value = '';
-
-        return false;
-    }
-
-    var reader = new FileReader();
-
-    reader.readAsArrayBuffer(event.target.files[0]);
-
-    reader.onload = function(event){
-
-        var data = new Uint8Array(reader.result);
-
-        var work_book = XLSX.read(data, {type:'array'});
-
-        var sheet_name = work_book.SheetNames;
-
-        var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {header:1});
-
-        if(sheet_data.length > 0)
+        for(var row = 0; row < sheet_data.length; row++)
         {
-            var table_output = '<table class="table table-striped table-bordered">';
 
-            for(var row = 0; row < sheet_data.length; row++)
+            table_output += '<tr>';
+
+            for(var cell = 0; cell < sheet_data[row].length; cell++)
             {
-
-                table_output += '<tr>';
-
-                for(var cell = 0; cell < sheet_data[row].length; cell++)
+                if(row == 0)
                 {
-
-                    if(row == 0)
-                    {
-
-                        table_output += '<th>'+sheet_data[row][cell]+'</th>';
-
-                    }
-                    else
-                    {
-
-                        table_output += '<td>'+sheet_data[row][cell]+'</td>';
-
-                    }
-
+                    table_output += '<th>'+sheet_data[row][cell]+'</th>';
                 }
-
-                table_output += '</tr>';
-
+                else
+                {
+                    table_output += '<td>'+sheet_data[row][cell]+'</td>';
+                }
             }
-
-            table_output += '</table>';
-
-            document.getElementById('excel_data').innerHTML = table_output;
+            table_output += '</tr>';
         }
-
-        excel_file.value = '';
-
+        table_output += '</table>';
+        document.getElementById('excel_data').innerHTML = table_output;
     }
-
+    excel_file.value = '';
+}
 });
-
 </script>
 </body>
 

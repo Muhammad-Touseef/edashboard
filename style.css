@@ -324,6 +324,7 @@ nav .profile-details i {
   color: white;
   display: flex;
   flex-wrap: wrap;
+  cursor: auto;
 }
 
 .ops-box {
@@ -331,7 +332,7 @@ nav .profile-details i {
   margin: 20px;
   background: #73ba3e;
   width: 250px;
-  height: 150px;
+  min-height: 150px;
 }
 
 /* left box */
@@ -356,7 +357,7 @@ nav .profile-details i {
 }
 
 .section-boxes .box .title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -415,6 +416,7 @@ nav .profile-details i {
   align-items: center;
   justify-content: space-between;
   margin: 0px 0;
+  border-bottom: 1px solid #006f3c;
 }
 
 .section-boxes .side-details li a img {
@@ -609,4 +611,8 @@ nav ul a:hover {
   background-color: #006f3c;
   color: white;
   transition: 0.5s;
+}
+.btn-head{
+  font-size: 12px;
+  margin-top: 5px
 }

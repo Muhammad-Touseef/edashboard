@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toxic & Radiation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    
+    <script type="text/javascript">
+
+    if(localStorage.getItem("Admin") == null) {
+     window.location.replace("login.html");
+    }
+  </script>
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <a href="index.html" target="index">
+                <li>Main Dashboard</li>
+            </a>
+            <a href="ops.html" target="ops">
+                <li>OPS Board</li>
+            </a>
+            <a href="permit.html" target="permit">
+                <li>Permit Board</li>
+            </a>
+            <a href="pid.html" target="pid">
+                <li>P & ID Board</li>
+            </a>
+        </ul>
+    </nav>
+    <div class="home-content" >
+
+                <h1>Toxic and Radiation Board</h1>
+            <div class="section-details" style="width:100%;">
+                PDF Displays here
+                <iframe src=".pdf" id="pdfOne"">
+                    </iframe>
+            </div>
+
+            
+        <!-- </div> -->
+    </div>
+</body>
+
+</html>

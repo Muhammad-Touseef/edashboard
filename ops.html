@@ -8,13 +8,29 @@
     <title>OPS Board</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
-    
+    <link rel="stylesheet" href="js/bootstrap.min.css">
+    <link rel="stylesheet" href="js/jquery-ui.css">
+    <script src="js/pdf.js"></script>
+    <script src="js/pdf.worker.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="js/xlsx.full.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- <script type="text/javascript" src="js/jquery-2.1.3.min.js"></script> -->
     <script type="text/javascript">
 
-    if(localStorage.getItem("Admin") == null) {
-     window.location.replace("login.html");
-    }
-  </script>
+        if (localStorage.getItem("Admin") == null) {
+            window.location.replace("login.html");
+        }
+    </script>
+<style type="text/css">
+input,button{
+    font-size: 12px;
+    padding: 2px;
+}
+
+
+</style>
 
 </head>
 
@@ -30,73 +46,588 @@
             <a href="pid.html" target="pid">
                 <li>P & ID Board</li>
             </a>
+            <a href="toxic.html" target="pid">
+                <li style="font-size:17px;">Toxic and Radiation Contours</li>
+            </a>
         </ul>
     </nav>
-    <div class="home-content" style="display: flex;flex-direction: column;
-    width: 100%;">
+    <div class="home-content" style="display: flex;flex-direction: column;width: 100%;">
 
         <div class="section-boxes" id="ops">
 
             <div class="section-details" style="width:100%;">
-                PDF Opens here
-                <iframe src=".pdf" id="pdfOne"">
-                    </iframe>
+                Display here
+                <div>
+                    <div class="iframedivES">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>Execution Schedule PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLink"></iframe>
+                        </div>     
+                      </div>     
+                    </div>
+                    <div id="excel_dataES" title="Execution Schedule Excel File Data" class="mt-5"></div>                                     
+                </div>
+                <div>
+                    <div class="iframedivDSCD">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>DSCD PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkDSCD"></iframe>
+                        </div>     
+                      </div>     
+                    </div>
+                    <h4></h4>
+                    <div id="excel_dataDSCD" class="mt-5"></div>                                     
+                </div>
+                <div>
+                    <div class="iframedivOpp">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>Operations ROTA/ Shift Schedule PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkOpp"></iframe>
+                        </div>     
+                      </div>     
+                    </div>
+                    <h4></h4>
+                    <div id="excel_dataOpp" class="mt-5"></div>                                     
+                </div>
+                <div>
+                    <div class="iframedivLOTO">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>LOTO sheet PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkLOTO"></iframe>
+                        </div>     
+                      </div>     
+                    </div>
+                    <h4></h4>
+                    <div id="excel_dataLOTO" class="mt-5"></div>                                     
+                </div>
+                <div>
+                    <div class="iframedivNB">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>Notice Board PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkNB"></iframe>
+                        </div>     
+                      </div>     
+                    </div>
+                    <h4></h4>
+                    <div id="excel_dataNB" class="mt-5"></div>                                     
+                </div>
+                <div>
+                    <div class="iframedivTC">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>Training Calendar PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkTC"></iframe>
+                        </div>     
+                      </div>     
+                    </div>
+                    <h4></h4>
+                    <div id="excel_dataDSCDTC" class="mt-5"></div>                                     
+                </div>
+                <div>
+                    <div class="iframedivMOC">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>JSA/MOCs PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkMOC"></iframe>
+                        </div>     
+                      </div>     
+                    </div>
+                    <h4></h4>
+                    <div id="excel_dataDSCDMOC" class="mt-5"></div>                                     
+                </div>
+                <div>
+                    <div class="iframedivMSDS">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>MSDS PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkMSDS"></iframe>
+                        </div>     
+                      </div>     
+                    </div>
+                    <h4></h4>
+                    <div id="excel_dataDSCDMSDS" class="mt-5"></div>                                     
+                </div>
+                <div>
+                    <div class="iframedivEMR">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>Emergency Contacts PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkEMR"></iframe>
+                        </div>     
+                      </div>     
+                    </div>
+                    <h4></h4>
+                    <div id="excel_dataDSCDEMR" class="mt-5"></div>                                     
+                </div>
+                <!-- <iframe src=".pdf" id="pdfOne"">
+    </iframe> -->
+</div>
+                
+<div class=" recent-section box" style="flex:2;">
+                    <div class="title">OPS Board</div>
+                    <ul class="ops-box-container" style="cursor: auto;">
+                        <li>
+                            <div class="title ops-box">
+                                
+                                   <p> Execution Schedule</p>
+                                    
+                                       <div class="btn-head"> For Excel</div>
+                                        <input type="file" id="excel_fileES">
+                                        
+                                        <div id=""> 
+                                        <div class="btn-head">For PDF</div>
+                                            <input name="file" type="file" class="" id="inputFileES" />  
+                                            <button id="cancel-pdfES">Cancel</button>
+                                        </div>
+                                    
+                                
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="title ops-box">
+                                <a>
+                                    DSCD<p style="font-size: 10px;">
+                                        For Excel
+                                        <input type="file" id="excel_fileDSCD">
+                                        For PDF
+                                        <input name="file" type="file" class="" id="inputFileDSCD" />
+                                        <button id="cancel-pdfDSCD">Cancel</button>
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title ops-box" style="font-size: 20px;">
+                                <a>
+                                    Operations ROTA/ Shift Schedule
+                                    <p style="font-size: 10px;">
+                                        For Excel
+                                        <input type="file" id="excel_file">
+                                        For PDF
+                                        <input name="file" type="file" class="" id="inputFileOpp" />
+                                        <button id="cancel-pdfOpp">Cancel</button>
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title ops-box">
+                                <a>
+                                    LOTO sheet
+                                    <p style="font-size: 10px;">
+                                        For Excel
+                                        <input type="file" id="excel_file">
+                                        For PDF
+                                        <input name="file" type="file" class="" id="inputFileLOTO" />
+                                        <button id="cancel-pdfLOTO">Cancel</button>
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title ops-box">
+                                <a>
+                                    Notice Board
+                                    <p style="font-size: 10px;">
+                                        For Excel
+                                        <input type="file" id="excel_file">
+                                        For PDF
+                                        <input name="file" type="file" class="" id="inputFileNB" />
+                                        <button id="cancel-pdfNB">Cancel</button>
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title ops-box">
+                                <a>
+                                    Training Calendar
+                                    <p style="font-size: 10px;">
+                                        For Excel
+                                        <input type="file" id="excel_file">
+                                        For PDF
+                                        <input name="file" type="file" class="" id="inputFileTC" />
+                                        <button id="cancel-pdfTC">Cancel</button>
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title ops-box">
+                                <a>
+                                    JSA/MOCs
+                                    <p style="font-size: 10px;">
+                                        For Excel
+                                        <input type="file" id="excel_file">
+                                        For PDF
+                                        <input name="file" type="file" class="" id="inputFileMOC" />
+                                        <button id="cancel-pdfMOC">Cancel</button>
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title ops-box">
+                                <a>
+                                    MSDS
+                                    <p style="font-size: 10px;">
+                                        For Excel
+                                        <input type="file" id="excel_file">
+                                        For PDF
+                                        <input name="file" type="file" class="" id="inputFileMSDS" />
+                                        <button id="cancel-pdfMSDS">Cancel</button>
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title ops-box">
+                                <a>
+                                    Emergency Contacts
+                                    <p style="font-size: 10px;">
+                                        For Excel
+                                        <input type="file" id="excel_file">
+                                        For PDF
+                                        <input name="file" type="file" class="" id="inputFileEMR" />
+                                        <button id="cancel-pdfEMR">Cancel</button>
+                                    </p>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
             </div>
 
-            <div class="recent-section box" style="flex:2;">
-                <div class="title">OPS Board</div>
-                <ul class="ops-box-container">
-                    <li>
-                        <div class="title ops-box" onclick="document.getElementById('pdfOne').src='pdfs/sample.pdf'">
-                            <a>
-                                Execution Schedule
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="title ops-box" onclick="document.getElementById('pdfOne').src='pdfs/sample.pdf'">
-                            <a>
-                                Notice Board
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="title ops-box" onclick="document.getElementById('pdfOne').src='pdfs/sample.pdf'">
-                            <a>
-                                Training Calendar
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="title ops-box" onclick="document.getElementById('pdfOne').src='pdfs/sample.pdf'">
-                            <a>
-                                JSA/MOCs
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="title ops-box" onclick="document.getElementById('pdfOne').src='pdfs/sample.pdf'">
-                            <a>
-                                MSDs
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="title ops-box" onclick="document.getElementById('pdfOne').src='pdfs/sample.pdf'">
-                            <a>
-                                Emergency Contacts
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-           
 
         </div>
-        
+
 
     </div>
+
+
+<script>
+            
+             var filename;
+            $('#inputFileES').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]                
+                  $(".iframedivES").show(); 
+                  $("#cancel-pdfES").show();              
+                $('#embdLinkES')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+            $(document).ready(function(){
+              $("#cancel-pdfES").click(function(){
+                $(".iframedivES").hide();
+              });
+            });
+
+            var filename;
+            $('#inputFileDSCD').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivDSCD").show();
+                  $("#cancel-pdfDSCD").show();
+                $('#embdLinkDSCD')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+            $(document).ready(function(){
+              $("#cancel-pdfDSCD").click(function(){
+                $(".iframedivDSCD").hide();
+              });
+            });
+
+            var filename;
+            $('#inputFileOpp').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivOpp").show();
+                  $("#cancel-pdfOpp").show();
+                $('#embdLinkOpp')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+            $(document).ready(function(){
+              $("#cancel-pdfOpp").click(function(){
+                $(".iframedivOpp").hide();
+              });
+            });
+
+            var filename;
+            $('#inputFileLOTO').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivLOTO").show();
+                  $("#cancel-pdfLOTO").show();
+                $('#embdLinkLOTO')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+            $(document).ready(function(){
+              $("#cancel-pdfLOTO").click(function(){
+                $(".iframedivLOTO").hide();
+              });
+            });
+
+            var filename;
+            $('#inputFileNB').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivNB").show();
+                  $("#cancel-pdfNB").show();
+                $('#embdLinkNB')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+            $(document).ready(function(){
+              $("#cancel-pdfNB").click(function(){
+                $(".iframedivNB").hide();
+              });
+            });
+
+            var filename;
+            $('#inputFileTC').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivTC").show();
+                  $("#cancel-pdfTC").show();
+                $('#embdLinkTC')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+            $(document).ready(function(){
+              $("#cancel-pdfTC").click(function(){
+                $(".iframedivTC").hide();
+              });
+            });
+
+            var filename;
+            $('#inputFileMOC').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivMOC").show();
+                  $("#cancel-pdfMOC").show();
+                $('#embdLinkMOC')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+            $(document).ready(function(){
+              $("#cancel-pdfMOC").click(function(){
+                $(".iframedivMOC").hide();
+              });
+            });
+
+            var filename;
+            $('#inputFileMSDS').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivMSDS").show();
+                  $("#cancel-pdfMSDS").show();
+                $('#embdLinkMSDS')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+            $(document).ready(function(){
+              $("#cancel-pdfMSDS").click(function(){
+                $(".iframedivMSDS").hide();
+              });
+            });
+
+            var filename;
+            $('#inputFileEMR').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivEMR").show();
+                  $("#cancel-pdfEMR").show();
+                $('#embdLinkEMR')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+            $(document).ready(function(){
+              $("#cancel-pdfEMR").click(function(){
+                // $(".iframedivEMR").hide();
+                $("#inputFileEMR").val('');
+                $("#embdLinkEMR").val('');
+              });
+            });
+
+
+
+
+
+
+            $(document).ready(function(){
+                $("#cancel-pdfES").hide();
+                $("#cancel-pdfDSCD").hide();
+                $("#cancel-pdfOpp").hide();
+                $("#cancel-pdfLOTO").hide();
+                $("#cancel-pdfNB").hide();
+                $("#cancel-pdfTC").hide();
+                $("#cancel-pdfMOC").hide();
+                $("#cancel-pdfMSDS").hide();
+                $("#cancel-pdfEMR").hide();
+              
+                $(".iframedivES").hide();
+                $(".iframedivDSCD").hide();
+                $(".iframedivOpp").hide();
+                $(".iframedivLOTO").hide();
+                $(".iframedivNB").hide();
+                $(".iframedivTC").hide();
+                $(".iframedivMOC").hide();
+                $(".iframedivMSDS").hide();
+                $(".iframedivEMR").hide();
+              
+            });
+</script>
+
+
+
+<script type="text/javascript">
+
+    const excel_file = document.getElementById('excel_fileES');
+
+    excel_file.addEventListener('change', (event) => {
+
+    if(!['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'].includes(event.target.files[0].type))
+    {
+        document.getElementById('excel_dataES').innerHTML = '<div class="alert alert-danger">Only .xlsx or .xls file format are allowed</div>';
+
+        excel_file.value = '';
+
+        return false;
+    }
+
+    var reader = new FileReader();
+
+    reader.readAsArrayBuffer(event.target.files[0]);
+
+    reader.onload = function(event){
+
+        var data = new Uint8Array(reader.result);
+
+        var work_book = XLSX.read(data, {type:'array'});
+
+        var sheet_name = work_book.SheetNames;
+
+        var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {header:1, defval: ""});
+
+        if(sheet_data.length > 0)
+        {
+            var table_output = '<table class="table table-striped table-bordered">';
+
+            for(var row = 0; row < sheet_data.length; row++)
+            {
+
+                table_output += '<tr>';
+
+                for(var cell = 0; cell < sheet_data[row].length; cell++)
+                {
+
+                    if(row == 0)
+                    {
+
+                        table_output += '<th>'+sheet_data[row][cell]+'</th>';
+
+                    }
+                    else
+                    {
+
+                        table_output += '<td>'+sheet_data[row][cell]+'</td>';
+
+                    }
+
+                }
+
+                table_output += '</tr>';
+
+            }
+
+            table_output += '</table>';
+
+            document.getElementById('excel_dataES').innerHTML = table_output;
+        }
+
+        excel_file.value = '';
+
+    }
+
+    });
+
+  </script>
+
+
+<script type="text/javascript">
+
+    const excel_fileDSCD = document.getElementById('excel_fileDSCD');
+
+    excel_fileDSCD.addEventListener('change', (event) => {
+
+    if(!['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'].includes(event.target.files[0].type))
+    {
+        document.getElementById('excel_dataDSCD').innerHTML = '<div class="alert alert-danger">Only .xlsx or .xls file format are allowed</div>';
+
+        excel_fileDSCD.value = '';
+
+        return false;
+    }
+
+    var reader = new FileReader();
+
+    reader.readAsArrayBuffer(event.target.files[0]);
+
+    reader.onload = function(event){
+
+        var data = new Uint8Array(reader.result);
+
+        var work_book = XLSX.read(data, {type:'array'});
+
+        var sheet_name = work_book.SheetNames;
+
+        var sheet_data = XLSX.utils.sheet_to_json(work_book.Sheets[sheet_name[0]], {header:1, defval: ""});
+
+        if(sheet_data.length > 0)
+        {
+            var table_output = '<table class="table table-striped table-bordered">';
+
+            for(var row = 0; row < sheet_data.length; row++)
+            {
+
+                table_output += '<tr>';
+
+                for(var cell = 0; cell < sheet_data[row].length; cell++)
+                {
+
+                    if(row == 0)
+                    {
+
+                        table_output += '<th>'+sheet_data[row][cell]+'</th>';
+
+                    }
+                    else
+                    {
+
+                        table_output += '<td>'+sheet_data[row][cell]+'</td>';
+
+                    }
+
+                }
+
+                table_output += '</tr>';
+
+            }
+
+            table_output += '</table>';
+
+            document.getElementById('excel_dataDSCD').innerHTML = table_output;
+        }
+
+        excel_fileDSCD.value = '';
+
+    }
+
+    });
+
+  </script>
+
+
 </body>
 
 </html>
