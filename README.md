@@ -23,5 +23,5 @@ Step 7: Open P&IDs page by clicking on nav bar for users <br>
  <br>
  <br>
 
-published for remote access to display at https://somia-ansari.github.io/dashboard <br>
-For code, vist the repository on github at https://github.com/somia-ansari/dashboard
+published for remote access to display at https://muhammad-touseef.github.io/edashboard/ <br>
+For code, vist the repository on github at https://github.com/Muhammad-Touseef/edashboard
