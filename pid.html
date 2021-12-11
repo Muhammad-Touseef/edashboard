@@ -8,6 +8,7 @@
     <title>EVTL</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="js/bootstrap.min.css">
     
     <script type="text/javascript">
 
@@ -15,7 +16,17 @@
      window.location.replace("login.html");
     }
   </script>
-
+<style type="text/css">
+    .side-details ul li{
+        padding: 5px 0 0 5px;
+        transition: 0.3s;
+    }
+    .side-details ul li:hover{
+        background-color: #006f3c;
+        color: #fff;
+        border-radius: 5px;
+    }
+</style>
 </head>
 
 <body>
@@ -38,7 +49,7 @@
     <div class="home-content" style="display: flex;flex-direction: column;width: 100%;">
 
         <div class="section-boxes" id="p&id">
-            <div class="recent-section box">
+            <div class="recent-section box" style="flex:10;">
                 <div class="title">P&ID Board</div>
                 <div class="section-details" style="height: 100vh;">
 
@@ -47,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="side-details">
+            <div class="side-details" style="padding:10px;flex: 1.5;margin: 10px 10px 0px 0px;">
                 <div class="title"><h3>Master P&IDs</h3></div>
                 <ul class="top-section-details">
 
