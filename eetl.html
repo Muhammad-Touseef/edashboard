@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EETL</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="js/bootstrap.min.css">
+    
+    <script type="text/javascript">
+
+    if(localStorage.getItem("Admin") == null) {
+     window.location.replace("login.html");
+    }
+  </script>
+<style type="text/css">
+    .side-details ul li{
+        padding: 5px 0 0 5px;
+        transition: 0.3s;
+    }
+    .side-details ul li:hover{
+        background-color: #006f3c;
+        color: #fff;
+        border-radius: 5px;
+    }
+</style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <a href="index.html" target="index">
+                <li>Main Dashboard</li>
+            </a>
+            <a href="permit.html" target="permit">
+                <li>Permit Board</li>
+            </a>
+            <a href="ops.html" target="ops">
+                <li>OPS Board</li>
+            </a>
+            <a href="toxic.html" target="toxic">
+                <li style="font-size:17px;">Toxic and Radiation Contours</li>
+            </a>
+            <a href="pid.html" target="pid">
+                <li>EVTL</li>
+            </a>
+            <a href="bos.html" target="bos">
+                <li>BOS</li>
+            </a>
+        </ul>
+    </nav>
+    <div class="home-content" style="display: flex;flex-direction: column;width: 100%;">
+
+        <div class="section-boxes" id="p&id">
+            <div class="recent-section box" style="flex:10;padding: 0px;">
+                <div class="title"><h1 style="text-align: center;">EETL P&ID Board</h1></div>
+                <div class="section-details" style="height: 100vh;">
+
+                    <iframe src="pdfs/LNG_P&IDS/LNG Overview.pdf" id="pdf1">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="side-details" style="padding:10px;flex: 1.5;margin: 10px 10px 0px 0px;">
+                <div class="title"><h3>EETL P&IDs</h3></div>
+                <ul class="top-section-details">
+
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/LNG_P&IDS/LNG Overview.pdf'">LNG Overview</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/LNG Fire Fighting.pdf'">LNG Fire Fighting</a>
+                    </li>
+                    <li>
+                        <a onclick=" document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/LNG Jetty.pdf'">LNG Jetty</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/LNG Legends.pdf'">LNG Legends</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/LNG Metering.pdf'">LNG Metering</a>
+                    </li>
+                    <li>
+                        <a onclick=" document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/LNG MLA-A.pdf'">LNG MLA-A</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/LNG MLA-B.pdf'">LNG MLA-B</a>
+                    </li>
+                    <li>
+                        <a onclick=" document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/LNG Back Pressure Skid.pdf'">LNG Back Pressure Skid</a>
+                    </li>
+                    <li>
+                        <a onclick="document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/LNG Piping Specification_1.pdf'">LNG Piping Specification_1</a>
+                    </li>
+                    <li>
+                        <a onclick=" document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/LNG Piping Specification_2.pdf'">LNG Piping Specification_2</a>
+                    </li>
+                    <li>
+                        <a onclick=" document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/LNG underground.pdf'">LNG underground</a>
+                    </li>
+                    <li>
+                        <a onclick=" document.getElementById('pdf1').src='pdfs/EVTL_P&IDS/Ethylene Glycol water system.pdf'">LNG Water Bath Heater</a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+</body>
+
+</html>
