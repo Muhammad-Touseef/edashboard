@@ -602,7 +602,8 @@ ul li {
 nav ul a {
   flex: 1;
   font-size: 1.5em;
-  color: #006f3c;
+  color: #ffffff;
+  text-shadow: 2px 3px 5px #000;
   padding: 10px 25px;
   border-right: 1px solid rgb(28, 28, 54);
   border-radius: 10px;
