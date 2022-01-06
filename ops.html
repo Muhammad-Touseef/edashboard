@@ -64,32 +64,74 @@ input,button{
             <div class="section-details" style="width:100%;">
                 
                 <div>
-                    <h4 style="margin-top: 40px;">Execution Schedule Excel File</h4>
-                    <div id="excel_dataES" title="Execution Schedule Excel File Data" class="mt-5"></div>                                     
+                    <div class="iframedivES">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4 style="margin-top: 40px;">Execution Schedule PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkES"></iframe>
+                        </div>     
+                      </div>     
+                    </div>                                                      
                 </div>
                 <div>
-                    <h4>DSCD Excel File</h4>               
-                    <div id="excel_dataDSCD" class="mt-5"></div>                                     
+                    <div class="iframedivDSCD">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>DSCD PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkDSCD"></iframe>
+                        </div>     
+                      </div>     
+                    </div>                                                      
                 </div>
                 <div>
-                    <h4>Operations ROTA/ Shift Schedule Excel File </h4>                   
-                    <div id="excel_dataOpp" class="mt-5"></div>                                     
-                </div>
-                <div>  
-                    <h4>LOTO sheet Excel File </h4>                
-                    <div id="excel_dataLOTO" class="mt-5"></div>                                     
-                </div>
-                <div>  
-                    <h4>Notice Board Excel File</h4>                
-                    <div id="excel_dataNB" class="mt-5"></div>                                     
+                    <div class="iframedivOpp">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>Operations ROTA/ Shift PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkOpp"></iframe>
+                        </div>     
+                      </div>     
+                    </div>                                                      
                 </div>
                 <div>
-                    <h4>Training Calendar Excel File</h4>
-                    <div id="excel_dataTC" class="mt-5"></div>                                     
+                    <div class="iframedivLOTO">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>LOTO sheet PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkLOTO"></iframe>
+                        </div>     
+                      </div>     
+                    </div>                                                      
                 </div>
                 <div>
-                    <h4>JSA/MOCs Excel File</h4>
-                    <div id="excel_dataJSA" class="mt-5"></div>                                     
+                    <div class="iframedivNB">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>Notice Board PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkNB"></iframe>
+                        </div>     
+                      </div>     
+                    </div>                                                      
+                </div>
+                <div>
+                    <div class="iframedivTC">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>Training Calendar PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkTC"></iframe>
+                        </div>     
+                      </div>     
+                    </div>                                                      
+                </div>
+                <div>
+                    <div class="iframedivJSA">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>JSA/MOCs PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkJSA"></iframe>
+                        </div>     
+                      </div>     
+                    </div>                                                      
                 </div>
                 <div>
                     <div class="iframedivMSDS">
@@ -102,9 +144,16 @@ input,button{
                     </div>                                                      
                 </div>
                 <div>
-                    <h4>BOS</h4>
-                    <div id="excel_dataBOS" class="mt-5"></div>                                                                  
+                    <div class="iframedivBOS">
+                      <div class="row">
+                        <div class="col-12">
+                          <h4>BOS PDF</h4>
+                          <iframe  height="1000" width="1500" name="plugin" id="embdLinkBOS"></iframe>
+                        </div>     
+                      </div>     
+                    </div>                                                      
                 </div>
+                
                 <!-- <iframe src=".pdf" id="pdfOne"">
     </iframe> -->
 </div>
@@ -117,9 +166,8 @@ input,button{
                                 
                                     Execution Schedule
                                     <p style="font-size: 10px;">
-                                        Upload Excel File with Extension .xlsx
-                                        <input type="file" id="excel_fileES">
-                                        
+                                        Upload PDF File
+                                        <input name="file" type="file" class="" id="inputFileES" />
                                     </p>
                                 
                             </div>
@@ -129,9 +177,8 @@ input,button{
                             <div class="title ops-box">
                                 <a>
                                     DSCD<p style="font-size: 10px;">
-                                        Upload Excel File with Extension .xlsx
-                                        <input type="file" id="excel_fileDSCD">
-                                        
+                                        Upload PDF File
+                                        <input name="file" type="file" class="" id="inputFileDSCD" />
                                     </p>
                                 </a>
                             </div>
@@ -141,9 +188,8 @@ input,button{
                                 <a>
                                     Operations ROTA/ Shift Schedule
                                     <p style="font-size: 10px;">
-                                        Upload Excel File with Extension .xlsx
-                                        <input type="file" id="excel_fileOpp">
-                                        
+                                        Upload PDF File
+                                        <input name="file" type="file" class="" id="inputFileOpp" />
                                     </p>
                                 </a>
                             </div>
@@ -153,9 +199,8 @@ input,button{
                                 <a>
                                     LOTO sheet
                                     <p style="font-size: 10px;">
-                                        Upload Excel File with Extension .xlsx
-                                        <input type="file" id="excel_fileLOTO">
-                                        
+                                        Upload PDF File
+                                        <input name="file" type="file" class="" id="inputFileLOTO" />
                                     </p>
                                 </a>
                             </div>
@@ -165,9 +210,8 @@ input,button{
                                 <a>
                                     Notice Board
                                     <p style="font-size: 10px;">
-                                        Upload Excel File with Extension .xlsx
-                                        <input type="file" id="excel_fileNB">
-                                       
+                                        Upload PDF File
+                                        <input name="file" type="file" class="" id="inputFileNB" />
                                     </p>
                                 </a>
                             </div>
@@ -177,9 +221,8 @@ input,button{
                                 <a>
                                     Training Calendar
                                     <p style="font-size: 10px;">
-                                        Upload Excel File with Extension .xlsx
-                                        <input type="file" id="excel_fileTC">
-                                        
+                                        Upload PDF File
+                                        <input name="file" type="file" class="" id="inputFileTC" />
                                     </p>
                                 </a>
                             </div>
@@ -189,9 +232,8 @@ input,button{
                                 <a>
                                     JSA/MOCs
                                     <p style="font-size: 10px;">
-                                        Upload Excel File with Extension .xlsx
-                                        <input type="file" id="excel_fileJSA">
-                                        
+                                        Upload PDF File
+                                        <input name="file" type="file" class="" id="inputFileJSA" />
                                     </p>
                                 </a>
                             </div>
@@ -200,11 +242,9 @@ input,button{
                             <div class="title ops-box">
                                 <a>
                                     MSDS
-                                    <p style="font-size: 10px;">
-                                        
-                                        For PDF
+                                    <p style="font-size: 10px;"> 
+                                        Upload PDF File
                                         <input name="file" type="file" class="" id="inputFileMSDS" />
-                                        <button id="cancel-pdfMSDS">Cancel</button>
                                     </p>
                                 </a>
                             </div>
@@ -216,68 +256,137 @@ input,button{
                                     <p style="font-size: 10px;">
                                         
                                         Upload Excel File with Extension .xlsx
-                                        <input type="file" id="excel_fileBOS">
+                                        <input name="file" type="file" class="" id="inputFileBOS" />
                                     </p>
                                 </a>
                             </div>
                         </li>
                     </ul>
             </div>
-
-
         </div>
-
-
     </div>
 
 
 <script>
             
             var filename;
+            $('#inputFileES').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivES").show();
+                $('#embdLinkES')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+
+            var filename;
+            $('#inputFileDSCD').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivDSCD").show();
+                $('#embdLinkDSCD')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+
+            var filename;
+            $('#inputFileOpp').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivOpp").show();
+                $('#embdLinkOpp')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+
+            var filename;
+            $('#inputFileLOTO').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivLOTO").show();
+                $('#embdLinkLOTO')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+
+            var filename;
+            $('#inputFileNB').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivNB").show();
+                $('#embdLinkNB')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+
+            var filename;
+            $('#inputFileTC').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivTC").show();
+                $('#embdLinkTC')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+
+            var filename;
+            $('#inputFileJSA').change(function() {
+              if (this.files[0].name != "") {
+                filename = this.files[0]
+                  $(".iframedivJSA").show();
+                $('#embdLinkJSA')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+              }
+            });
+
+            var filename;
             $('#inputFileMSDS').change(function() {
               if (this.files[0].name != "") {
                 filename = this.files[0]
                   $(".iframedivMSDS").show();
-                  $("#cancel-pdfMSDS").show();
                 $('#embdLinkMSDS')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
               }
             });
-            $(document).ready(function(){
-              $("#cancel-pdfMSDS").click(function(){
-                $(".iframedivMSDS").hide();
-              });
-            });
+            
 
             var filename;
-            $('#inputFileEMR').change(function() {
+            $('#inputFileBOS').change(function() {
               if (this.files[0].name != "") {
                 filename = this.files[0]
-                  $(".iframedivEMR").show();
-                  $("#cancel-pdfEMR").show();
-                $('#embdLinkEMR')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
+                  $(".iframedivBOS").show();
+                $('#embdLinkBOS')[0].src = window.URL.createObjectURL(new Blob([filename], {"type":"application/pdf"}));
               }
             });
-            $(document).ready(function(){
-              $("#cancel-pdfEMR").click(function(){
-                // $(".iframedivEMR").hide();
-                $("#inputFileEMR").val('');
-                $("#embdLinkEMR").val('');
-              });
-            });
+
+
+
+            // $(document).ready(function(){
+            //   $("#cancel-pdfMSDS").click(function(){
+            //     $(".iframedivMSDS").hide();
+            //   });
+            // });
+
+            // $(document).ready(function(){
+            //   $("#cancel-pdfEMR").click(function(){
+            //     // $(".iframedivEMR").hide();
+            //     $("#inputFileEMR").val('');
+            //     $("#embdLinkEMR").val('');
+            //   });
+            // });
 
             $(document).ready(function(){
                 
-                $("#cancel-pdfMSDS").hide();
-                $("#cancel-pdfEMR").hide();
-              
+                // $("#cancel-pdfMSDS").hide();
+                // $("#cancel-pdfEMR").hide();
+                
+                $(".iframedivES").hide();
+                $(".iframedivDSCD").hide();
+                $(".iframedivOpp").hide();
+                $(".iframedivLOTO").hide();
+                $(".iframedivNB").hide();
+                $(".iframedivTC").hide();
+                $(".iframedivJSA").hide();
                 $(".iframedivMSDS").hide();
-                $(".iframedivEMR").hide();
+                $(".iframedivBOS").hide();
               
             });
  </script>
 
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
     const excel_file = document.getElementById('excel_fileES');
 
@@ -779,7 +888,7 @@ input,button{
 
     });
 
-  </script>
+  </script> -->
 </body>
 
 </html>
